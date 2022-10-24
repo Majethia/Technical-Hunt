@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Instructions</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  {% load static %}
+  <link href="{% static '/hunt/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+    body {
+      background: lightgoldenrodyellow;
+    }
+
+    .paper {
+      position: absolute;
+      height: 900px;
+      width: 600px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0px 0px 5px 0px #888;
+    }
+
+    .paper::before {
+      content: '';
+      position: absolute;
+      left: 45px;
+      height: 100%;
+      width: 2px;
+      background: rgba(255, 0, 0, 0.4);
+    }
+
+    .lines {
+      margin-top: 40px;
+      height: calc(100% - 40px);
+      width: 100%;
+      background-image: repeating-linear-gradient(white 0px, white 24px, steelblue 25px);
+    }
+
+    .text {
+      position: absolute;
+      top: 75px;
+      left: 55px;
+      bottom: 10px;
+      right: 10px;
+      line-height: 25px;
+      font-family: 'Indie Flower';
+      overflow: hidden;
+      outline: none;
+    }
+
+    .holes {
+      position: absolute;
+      left: 10px;
+      height: 25px;
+      width: 25px;
+      background: lightgoldenrodyellow;
+      border-radius: 50%;
+      box-shadow: inset 0px 0px 2px 0px #888;
+    }
+
+    .hole-top {
+      top: 10%;
+    }
+
+    .hole-middle {
+      top: 50%;
+    }
+
+    .hole-bottom {
+      bottom: 10%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mb-lg-5" >
+    <form action="/hunt/" method="post">
+      {% csrf_token %}
+      <div class="text-center mt-lg-3 mb-lg-3">
+        <button type="submit" class="btn btn-outline-danger">Let's Hunt <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </form>
+  <div class="row container d-flex justify-content-center" style="margin-bottom: 60rem;">
+    <div class="paper">
+      <div class="lines">
+        <div class="text" contenteditable spellcheck="false">
+          <h2><strong>📜RULES📜 :</strong></h2> <br><br>
+          <div class="float-start text-wrap"><b>
+              This tech hunt is made up of five rounds. On solving each round you'll get a key, which you have to enter
+              into the website. On doing so you'll unlock the next round which will eventually lead you to the treasure.
+              💰
+              <br><br>
+              To begin you'll have to scan the qr code and then login to the website.
+              <br><br>
+              Round One : Encode Decode<br>
+              1) In this round you'll be given a code which you'll have to decode to reveal a location. <br>
+              2) On going to the location you'll get a key which you'll have to enter on the website to unlock the next
+              round.<br>
+              <br><br>
+              Round Two : Puzzle Round<br>
+              Solve the puzzle and you'll get a key. <br>
+              <br><br>
+              Round Three : Coding Round<br>
+              1)You'll be given a code which you'll have to run. <br>
+              2)On running the code successfully the volunteers will give you a clue to solve.<br>
+              3) Solving the clue will reveal a location where you'll get a key. <br>
+              <br><br>
+              Round four : <br>
+              On solving the clue given to you you'll get a key. <br>
+              <br><br>
+              Round five : final round<br>
+              The final round will lead you to the treasure.<br></b>
+          </div>
+        </div>
+      </div>
+      <div class="holes hole-top"></div>
+      <div class="holes hole-middle"></div>
+      <div class="holes hole-bottom"></div>
+    </div>
+  </div>
+  </div>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
